@@ -72,16 +72,36 @@ window.addEventListener("resize", () => {
 });
 
 // -- Pega todos os Links do Menu --
+
+// pega todos os links do menu
 const links = document.querySelectorAll('.link-menu');
-const loginBox = document.getElementById('loginBox');
-const paginas = document.querySelectorAll('.pagina');
+// pega a caixa de login
+const loginBox = document.querySelector('.login-box');
+// pega todas as páginas
+// const paginas = document.querySelectorAll('.pagina'); // Removido para evitar redeclaração
 
 links.forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const targetId = link.getAttribute('data-target'); 
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // evita comportamento padrão do link
+    
+    const target = link.getAttribute('data-target');
 
-    //se for "login" , mostra a tela de login
-    if (targetId === 'login') {
-      loginBox.style.display = 'block';
-      pagionas.forEach(p => p.classList.add('hidden'));
+    // se for "login", mostra a tela de login
+    if (target === "login") {
+      loginBox.style.display = "block";
+      paginas.forEach(p => p.classList.add("hidden"));
+    } else {
+      // esconde o login
+      loginBox.style.display = "none";
+
+      // esconde todas as páginas
+      paginas.forEach(p => p.classList.add("hidden"));
+
+      // mostra só a página escolhida
+      const paginaAtiva = document.getElementById(target);
+      if (paginaAtiva) {
+        paginaAtiva.classList.remove("hidden");
+      }
+    }
+  });
+});
