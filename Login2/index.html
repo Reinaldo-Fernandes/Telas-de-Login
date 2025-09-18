@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+  
+    <header class="cabecalho">
+        <div class="logo">
+            <img src="/teste/chibi1.png" alt="Logo da Empresa">
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li><a href="#" class="link-menu" data-target="login">Home</a></li>
+                <li><a href="#" class="link-menu" data-target="sobre">Sobre</a></li>
+                <li><a href="#" class="link-menu" data-target="servico">Serviços</a></li>
+                <li><a href="#" class="link-menu" data-target="contato">Contato</a></li>
+            </ul>
+            
+        </nav>
+
+        
+    </header>
+
+    <canvas id="bg"></canvas>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" placeholder="Usuário">
+        <input type="password" placeholder="Senha">
+        <button>Entrar</button>
+    </div>
+
+        <div id="sobre" class="pagina hidden">
+            <h2>Sobre a Empresa</h2>
+            <p>Aqui você encontra informações sobre a empresa.</p>
+        </div>
+    
+    <div id="servico" class="pagina hidden">
+        <h2>Nossos Serviços </h2>
+        <p>Conheça os serviços que oferecemos.</p> 
+    </div>
+
+    <div id="contato" class="pagina hidden">
+        <h2>Contatos </h2>
+        <p>Fale conosco através desta página.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

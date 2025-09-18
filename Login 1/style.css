@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Para organizar cabeçalho em cima e login centralizado */
+  justify-content: center;
+  align-items: center;
+  background: #0f172a;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Estilos para o cabeçalho (logo + menu) */
+.cabecalho {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 20px;
+    background-color: rgba(21, 21, 39, 0); /* corrigido */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Estilo da logo */
+.logo img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Estilos para o menu de navegação */
+.menu ul {
+    list-style: none; 
+    display: flex; 
+    gap: 20px; 
+}
+
+.menu a {
+    text-decoration: none;
+    color: #fff; /* melhor contraste no fundo escuro */
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #007bff;
+}
+
+/* Canvas de fundo animado */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Estilos para a seção de login */
+.login-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  text-align: center;
+  margin-top: 120px; /* afastar do cabeçalho */
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.login-box input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: #1d4ed8;
+}
+
+.pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilo para esconder elementos */
+.hidden {
+    display: none;
+}
