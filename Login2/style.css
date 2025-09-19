@@ -8,7 +8,7 @@ body {
   margin: 0;
   height: 100vh;
   display: flex;
-  flex-direction: column; /* Para organizar cabeçalho em cima e login centralizado */
+  flex-direction: column; 
   justify-content: center;
   align-items: center;
   background: #0f172a;
@@ -17,20 +17,18 @@ body {
   color: white;
 }
 
-/* Estilos para o cabeçalho (logo + menu) */
 .cabecalho {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center; 
     padding: 20px;
-    background-color: rgba(21, 21, 39, 0); /* corrigido */
+    background-color: rgba(21, 21, 39, 0);
     position: absolute;
     top: 0;
     left: 0;
 }
 
-/* Estilo da logo */
 .logo img {
     width: 100px; 
     height: 100px;
@@ -38,7 +36,6 @@ body {
     object-fit: cover;
 }
 
-/* Estilos para o menu de navegação */
 .menu ul {
     list-style: none; 
     display: flex; 
@@ -47,7 +44,7 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: #fff; /* melhor contraste no fundo escuro */
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
     padding: 5px 10px;
@@ -58,7 +55,36 @@ body {
     color: #007bff;
 }
 
-/* Canvas de fundo animado */
+.menu {
+  display: flex;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: rgba(15,23,42,0.95);
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .menu.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
 canvas {
   position: absolute;
   top: 0;
@@ -66,7 +92,6 @@ canvas {
   z-index: -1;
 }
 
-/* Estilos para a seção de login */
 .login-box {
   background: rgba(255, 255, 255, 0.1);
   padding: 40px;
@@ -74,7 +99,7 @@ canvas {
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   text-align: center;
-  margin-top: 120px; /* afastar do cabeçalho */
+  margin-top: 120px;
 }
 
 .login-box h2 {
@@ -117,7 +142,180 @@ canvas {
     text-align: center;
 }
 
-/* Estilo para esconder elementos */
+.hidden {
+    display: none;
+}
+
+h6 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+h6 span {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.checkbox:checked,
+.checkbox:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkbox:checked + label,
+.checkbox:not(:checked) + label {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  margin: 10px auto 20px auto;
+  cursor: pointer;
+  background-color: #38bdf8;
+}
+
+.checkbox:checked + label i,
+.checkbox:not(:checked) + label i {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #1e293b;
+  color: #38bdf8;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+
+.checkbox:checked + label i {
+  transform: translateX(44px) rotate(-270deg);
+}
+
+.card-3d-wrap {
+  position: relative;
+  width: 380px;
+  max-width: 100%;
+  height: 380px;
+  perspective: 800px;
+  margin: 0 auto;
+}
+
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
+.center-wrap {
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%) translateZ(35px);
+  display: block;
+  z-index: 20;
+  text-align: center;
+}
+
+.center-wrap h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-style {
+  padding: 13px 20px;
+  height: 48px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #e2e8f0;
+  background-color: rgba(30,41,59,0.9);
+  border: none;
+  outline: none;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px rgba(21,21,21,.3);
+}
+
+.form-style:focus {
+  box-shadow: 0 4px 8px rgba(56,189,248,.4);
+  background-color: rgba(30,41,59,1);
+}
+
+.btn {
+  border-radius: 8px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #38bdf8;
+  color: #0f172a;
+  box-shadow: 0 8px 24px rgba(56,189,248,.2);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(29,78,216,.3);
+}
+
+.pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    color: #f1f5f9;
+}
+
 .hidden {
     display: none;
 }

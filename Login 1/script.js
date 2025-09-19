@@ -1,36 +1,49 @@
 const linksMenu = document.querySelectorAll('.link-menu');
 const paginas = document.querySelectorAll('.pagina');
+const loginBox = document.querySelector('.login-box');
 
+// Menu navegação
 linksMenu.forEach(link =>{
     link.addEventListener('click', function(e){
         e.preventDefault();
         const targetId = this.getAttribute('data-target');
 
-        paginas.forEach(pagina =>{
-            pagina.classList.add('hidden');
-        });
-        document.getElementById(targetId).classList.remove('hidden');
+        if (targetId === "login") {
+            loginBox.style.display = "block";
+            paginas.forEach(p => p.classList.add("hidden"));
+        } else {
+            loginBox.style.display = "none";
+            paginas.forEach(p => p.classList.add("hidden"));
+            document.getElementById(targetId).classList.remove("hidden");
+        }
     });
 });
 
-//Animação
+// ================= ANIMAÇÃO DE PARTÍCULAS =================
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+let particles = [];
+let num;
 
-const particles = [];
-const num = 60;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-for (let i = 0; i < num; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    dx: (Math.random() - 0.5) * 1,
-    dy: (Math.random() - 0.5) * 1,
-    radius: 2
-  });
+  // calcula número proporcional ao tamanho da tela
+  const baseDensity = 9000; // quanto maior esse valor, menos partículas
+  num = Math.floor((canvas.width * canvas.height) / baseDensity);
+
+  particles.length = 0; // limpa o array
+  for (let i = 0; i < num; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      dx: (Math.random() - 0.5) * 1,
+      dy: (Math.random() - 0.5) * 1,
+      radius: 2
+    });
+  }
 }
 
 function animate() {
@@ -64,44 +77,7 @@ function animate() {
 
   requestAnimationFrame(animate);
 }
+
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
 animate();
-
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-
-// -- Pega todos os Links do Menu --
-
-// pega todos os links do menu
-const links = document.querySelectorAll('.link-menu');
-// pega a caixa de login
-const loginBox = document.querySelector('.login-box');
-// pega todas as páginas
-// const paginas = document.querySelectorAll('.pagina'); // Removido para evitar redeclaração
-
-links.forEach(link => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault(); // evita comportamento padrão do link
-    
-    const target = link.getAttribute('data-target');
-
-    // se for "login", mostra a tela de login
-    if (target === "login") {
-      loginBox.style.display = "block";
-      paginas.forEach(p => p.classList.add("hidden"));
-    } else {
-      // esconde o login
-      loginBox.style.display = "none";
-
-      // esconde todas as páginas
-      paginas.forEach(p => p.classList.add("hidden"));
-
-      // mostra só a página escolhida
-      const paginaAtiva = document.getElementById(target);
-      if (paginaAtiva) {
-        paginaAtiva.classList.remove("hidden");
-      }
-    }
-  });
-});
