@@ -157,7 +157,7 @@ positioned-text {
         z-index: 100; /* Garante que fique sobre outros conteúdos */
         pointer-events: none; /* Permite interagir com os elementos por baixo */
         color: #fdfdfd; /* Cor do texto da marca d'água */
-        font-size: 50px;
+        font-size: 40px;
         font-weight: bold;
         text-transform: uppercase;
     }
