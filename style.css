@@ -147,3 +147,17 @@ positioned-text {
         right: 10px;
     }
 }
+
+.watermark {
+        position: fixed; /* Fica fixo na tela */
+        top: 45%;
+        left: 35%;
+        transform: translate(-50%, -50%) rotate(-45deg); /* Centraliza e rotaciona */
+        opacity: 0.3; /* Transparência */
+        z-index: 100; /* Garante que fique sobre outros conteúdos */
+        pointer-events: none; /* Permite interagir com os elementos por baixo */
+        color: #fdfdfd; /* Cor do texto da marca d'água */
+        font-size: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
