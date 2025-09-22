@@ -8,7 +8,6 @@ body {
     margin: 0;
 }
 
-/* Canvas fundo */
 #background {
     position: fixed;
     top: 0;
@@ -37,6 +36,20 @@ h1 {
     margin-bottom: 40px;
     font-size: 2.2em;
     letter-spacing: 1px;
+}
+
+.container p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    padding: 0 15px;
+}
+
+.container p strong {
+    color: #333;
+    font-weight: 700;
 }
 
 .buttons-container {
@@ -76,7 +89,7 @@ h1 {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
-/* Efeito de hover moderno */
+
 .btn::after {
     content: '';
     position: absolute;
@@ -98,10 +111,7 @@ h1 {
     box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* Mascote */
 .mascot {
-    bottom: 20px;
-    right: 20px;
     width: 500px;
     height: auto;
     z-index: 3;
@@ -112,13 +122,18 @@ h1 {
     transform: scale(1.1) rotate(-10deg);
 }
 
-positioned-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 0.9em;
-    color: #000000;
-    z-index: 4;
+.watermark {
+    position: fixed;
+    top: 45%;
+    left: 35%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    opacity: 0.3;
+    z-index: 100;
+    pointer-events: none;
+    color: #fdfdfd;
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
@@ -128,6 +143,12 @@ positioned-text {
 
     h1 {
         font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+
+    .container p {
+        font-size: 1em;
+        margin-top: -10px;
         margin-bottom: 30px;
     }
 
@@ -141,32 +162,20 @@ positioned-text {
         font-size: 1em;
     }
 
-    /* Ajuste para o mascote */
     .mascot {
-        width: 150px; /* Reduz o tamanho do mascote para telas menores */
-        bottom: 10px;
-        right: 10px;
+        width: 150px;
+        display: block;
+        margin: 0 auto 20px auto;
+        position: relative;
+        bottom: auto;
+        right: auto;
     }
 
-    /* Ajuste para a marca d'água */
     .watermark {
-        font-size: 20px; /* Diminui o tamanho da fonte */
-        top: 50%; /* Centraliza um pouco mais na tela */
+        font-size: 20px;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg); /* Remove a rotação para melhor visualização */
-        opacity: 0.1; /* Diminui a opacidade */
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 0.1;
     }
 }
-.watermark {
-        position: fixed; /* Fica fixo na tela */
-        top: 45%;
-        left: 35%;
-        transform: translate(-50%, -50%) rotate(-45deg); /* Centraliza e rotaciona */
-        opacity: 0.3; /* Transparência */
-        z-index: 100; /* Garante que fique sobre outros conteúdos */
-        pointer-events: none; /* Permite interagir com os elementos por baixo */
-        color: #fdfdfd; /* Cor do texto da marca d'água */
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
