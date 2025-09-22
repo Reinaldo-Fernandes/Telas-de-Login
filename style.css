@@ -141,13 +141,22 @@ positioned-text {
         font-size: 1em;
     }
 
+    /* Ajuste para o mascote */
     .mascot {
-        width: 300px;
+        width: 150px; /* Reduz o tamanho do mascote para telas menores */
         bottom: 10px;
         right: 10px;
     }
-}
 
+    /* Ajuste para a marca d'água */
+    .watermark {
+        font-size: 20px; /* Diminui o tamanho da fonte */
+        top: 50%; /* Centraliza um pouco mais na tela */
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg); /* Remove a rotação para melhor visualização */
+        opacity: 0.1; /* Diminui a opacidade */
+    }
+}
 .watermark {
         position: fixed; /* Fica fixo na tela */
         top: 45%;
