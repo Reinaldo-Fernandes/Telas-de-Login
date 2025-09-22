@@ -154,8 +154,8 @@ h1 {
 
     /* AQUI ESTÁ A MUDANÇA */
     .buttons-container {
-        flex-direction: row; /* Mantém os botões um ao lado do outro */
-        gap: 10px; /* Reduz o espaço entre os botões para que caibam na tela */
+        flex-direction: row; 
+        gap: 10px; 
     }
 
     .btn {
@@ -173,10 +173,11 @@ h1 {
     }
 
     .watermark {
-        font-size: 20px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
+        font-size: 15px;
+        top: 30%;
+        left: 43%;
+        transform: translate(-50%, -50%) ;
         opacity: 0.1;
+        color: #000000;
     }
 }
