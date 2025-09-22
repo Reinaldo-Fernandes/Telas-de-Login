@@ -1,85 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <title>Login</title>
+    <title>Escolha seu Modelo de Login</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-  
-    <header class="cabecalho">
-        <div class="logo">
-            <img src="./Login 1/chibi1.png" alt="Logo da Empresa">
+
+         <div class="watermark">
+            <h1>Reinaldo Fernandes</h1>
+            <p>Demonstrativa</p>
         </div>
 
-        <nav class="menu">
-            <ul>
-                <li><a href="#" class="link-menu" data-target="login">Home</a></li>
-                <li><a href="#" class="link-menu" data-target="sobre">Sobre</a></li>
-                <li><a href="#" class="link-menu" data-target="servico">Serviços</a></li>
-                <li><a href="#" class="link-menu" data-target="contato">Contato</a></li>
-                <li><a href="index.html" class="Voltar btn">Voltar</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Canvas para fundo animado -->
+    <canvas id="background"></canvas>
+    <div class="container">
+        <img src="octo.png" class="mascot" alt="Mascote">
+        <h1>Escolha seu Modelo de Login</h1> 
+        <p> Estilo de login 1 estilo costelação</p> <p>Estilo de Login 2 caindo códigos</p>
+        <!-- Mascote -->
 
-    <canvas id="bg"></canvas>
-
-    <div class="login-box">
-        <h6 class="mb-0 pb-3"><span>Login</span><span>Cadastro</span></h6>
-        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
-        <label for="reg-log"><i class="fa-regular fa-user"></i></label>
-
-        <div class="card-3d-wrap mx-auto">
-            <div class="card-3d-wrapper">
-                <div class="card-front">
-                    <div class="center-wrap">
-                        <h4 class="mb-4 pb-3">Login</h4>
-                        <div class="form-group">
-                            <input type="text" placeholder="Usuário" class="form-style">
-                        </div>
-                        <div class="form-group mt-2">
-                            <input type="password" placeholder="Senha" class="form-style">
-                        </div>
-                        <button class="btn mt-4">Entrar</button>
-                    </div>
-                </div>
-
-                <div class="card-back">
-                    <div class="center-wrap">
-                        <h4 class="mb-4 pb-3">Cadastro</h4>
-                        <div class="form-group">
-                            <input type="text" placeholder="Nome" class="form-style">
-                        </div>
-                        <div class="form-group mt-2">
-                            <input type="email" placeholder="Email" class="form-style">
-                        </div>
-                        <div class="form-group mt-2">
-                            <input type="password" placeholder="Senha" class="form-style">
-                        </div>
-                        <button class="btn mt-4">Cadastrar</button>
-                    </div>
+        <div class="buttons-container">
+            
+            <div class="btn-wrapper">
+                <a href="./Login 1/login1.html" class="btn login1-btn">Login 1</a>
+                <div class="preview">
+                    
                 </div>
             </div>
+
+            <div class="btn-wrapper">
+                <a href="./Login2/login2.html" class="btn login2-btn">Login 2</a>
+                <div class="preview">
+                </div>
+            </div>
+
         </div>
     </div>
-    <div id="sobre" class="pagina hidden">
-        <h2>Sobre a Empresa</h2>
-        <p>Aqui você encontra informações sobre a empresa.</p>
-    </div>
-    
-    <div id="servico" class="pagina hidden">
-        <h2>Nossos Serviços</h2>
-        <p>Conheça os serviços que oferecemos.</p> 
-    </div>
 
-    <div id="contato" class="pagina hidden">
-        <h2>Contatos</h2>
-        <p>Fale conosco através desta página.</p>
-    </div>
+    
 
     <script src="script.js"></script>
 </body>
