@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     background: #0f172a;
-    overflow: hidden;
+    overflow-x: hidden; /* Adicionado para remover a rolagem lateral */
+    overflow-y: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e2e8f0;
 }
