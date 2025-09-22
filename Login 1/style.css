@@ -1,3 +1,5 @@
+/* style.css completo */
+
 * {
     margin: 0;
     padding: 0;
@@ -259,8 +261,10 @@ h6 span {
   }
 
   .menu ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; /* Mantém os itens do menu lado a lado */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha se não couberem */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 10px; /* Reduz o espaçamento entre os itens do menu */
     margin-top: 10px;
   }
 
