@@ -73,7 +73,7 @@ h1 {
     position: relative;
     z-index: 2;
     display: inline-block;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
@@ -87,7 +87,7 @@ h1 {
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .btn::after {
@@ -108,7 +108,7 @@ h1 {
 
 .btn:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
 .mascot {
@@ -152,9 +152,10 @@ h1 {
         margin-bottom: 30px;
     }
 
+    /* AQUI ESTÁ A MUDANÇA */
     .buttons-container {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row; /* Mantém os botões um ao lado do outro */
+        gap: 10px; /* Reduz o espaço entre os botões para que caibam na tela */
     }
 
     .btn {
