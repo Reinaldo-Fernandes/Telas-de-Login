@@ -124,7 +124,7 @@ h1 {
 
 .watermark {
     position: fixed;
-    top: 20%;
+    top: 15%;
     left: 48%;
     transform: translate(-50%, -50%) ;
     opacity: 0.3;
@@ -174,10 +174,9 @@ h1 {
 
     .watermark {
         font-size: 15px;
-        top: 15%;
+        top: 30%;
         left: 43%;
         transform: translate(-50%, -50%) ;
         opacity: 0.1;
-        color: #000000;
     }
 }
